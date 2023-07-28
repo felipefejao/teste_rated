@@ -199,6 +199,11 @@ return [
         \App\Providers\UserRepositoryProvider::class,
         \App\Providers\UserServiceProvider::class,
 
+        //Product Provider
+
+        \App\Providers\ProductRepositoryProvider::class,
+        \App\Providers\ProductServiceProvider::class,
+
     ],
 
     /*

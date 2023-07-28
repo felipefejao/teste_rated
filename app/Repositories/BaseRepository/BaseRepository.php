@@ -53,7 +53,7 @@ class BaseRepository implements BaseRepositoryContract
      */
     public function update(int $id, array $data)
     {
-        return $this->model->update($id, $data);
+        return $this->model->where('id', $id)->update($data);
     }
 
     /**
@@ -62,6 +62,6 @@ class BaseRepository implements BaseRepositoryContract
      */
     public function delete(int $id)
     {
-        return $this->model->delete($id);
+        return $this->model->where('id',$id)->delete();
     }
 }
