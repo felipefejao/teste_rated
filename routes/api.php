@@ -29,17 +29,17 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::group(['prefix' => 'user'], function () {
-    Route::get('/{userId}', GetUserController::class);
-    Route::get('/', GetAllUsersController::class);
-    Route::post('/', AddUserController::class);
-    Route::post('/{userId}', UpdateUserController::class);
-    Route::delete('/{userId}', RemoveUserController::class);
+    Route::get('/{userId}', GetUserController::class)->name('api-get-user');
+    Route::get('/', GetAllUsersController::class)->name('api-get-all-users');
+    Route::post('/', AddUserController::class)->name('api-add-user');
+    Route::post('/{userId}', UpdateUserController::class)->name('api-update-user');
+    Route::delete('/{userId}', RemoveUserController::class)->name('api-remove-user');
 });
 
 Route::group(['prefix' => 'product'], function () {
-    Route::get('/{productId}', GetProductController::class);
-    Route::get('/', GetAllProductsController::class);
-    Route::post('/', AddProductController::class);
-    Route::post('/{productId}', UpdateProductController::class);
-    Route::delete('/{productId}', RemoveProductController::class);
+    Route::get('/{productId}', GetProductController::class)->name('api-get-product');
+    Route::get('/', GetAllProductsController::class)->name('api-get-all-products');
+    Route::post('/', AddProductController::class)->name('api-add-product');
+    Route::post('/{productId}', UpdateProductController::class)->name('api-update-product');
+    Route::delete('/{productId}', RemoveProductController::class)->name('api-remove-product');
 });
