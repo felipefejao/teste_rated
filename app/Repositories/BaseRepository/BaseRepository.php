@@ -34,7 +34,7 @@ class BaseRepository implements BaseRepositoryContract
      */
     public function find_where(array $data)
     {
-        return $this->model->selectWhere($data)->get();
+        return $this->model->where($data)->get();
     }
 
     /**
